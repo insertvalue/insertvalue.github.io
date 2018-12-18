@@ -458,7 +458,7 @@
                 
               
 
-              <time title="创建时间：2018-12-18 16:54:09 / 修改时间：17:00:18" itemprop="dateCreated datePublished" datetime="2018-12-18T16:54:09+08:00">2018-12-18</time>
+              <time title="创建时间：2018-12-18 16:54:09 / 修改时间：17:02:25" itemprop="dateCreated datePublished" datetime="2018-12-18T16:54:09+08:00">2018-12-18</time>
             
 
             
@@ -529,16 +529,14 @@
 <h5 id="配置"><a class="header-anchor" href="#配置">¶</a>配置</h5>
 <p>完成插件安装后还需要修改 Hexo 站点配置文件 _config.yml（不是主题配置哦）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性</span><br><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true</span><br><span class="line">    xhtmlOut: false</span><br><span class="line">    breaks: true</span><br><span class="line">    linkify: true</span><br><span class="line">    typographer: true</span><br><span class="line">    quotes: &apos;“”‘’&apos;</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-footnote</span><br><span class="line">    - markdown-it-sup</span><br><span class="line">    - markdown-it-sub</span><br><span class="line">    - markdown-it-abbr</span><br><span class="line">    - markdown-it-emoji</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &apos;v&apos;</span><br><span class="line">    permalink: true</span><br><span class="line">    permalinkClass: header-anchor</span><br><span class="line">    permalinkSymbol: ¶</span><br></pre></td></tr></table></figure>
-<p>这里需要注意<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>html: true # 不转义 HTML 内容，即允许 HTML<br>
-## OR<br>
-html: false # 转义 HTML，&lt; &gt; 尖括号会被转义成 &lt; &gt;等</p>
-<pre><code>
-```plugins:```中的最后一项```- markdown-it-emoji```是手动添加的，官方 Github Wiki 中给出的配置不包含这一项，其他配置参照的 Github Wiki 中的默认配置，hexo-renderer-markdown-it 提供的其他新特性还没有一一尝试，暂时只想用它的 emoji 功能。✌️
-
-##### 使用方法
-1. 在[Emoji](https://emoji.codes/)中找到你想要的表情，然后点击复制粘贴。
-2. 常用的emoji可以记下它的编码，直接输入，例如直接输入笑脸对应的 emoji 编码 :smile: 就可以得到 😄 。</code></pre>
+<p>这里需要注意<code>render:</code>下的<code>html:</code>配置项，它的作用是控制<code>Markdown</code>渲染引擎是否转义文档中出现的<code>html</code>标签，默认为<code>false</code>，这里要设置为<code>true</code>，否则回导致<code>&lt;!--more--&gt;</code>渲染失败。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">html: true # 不转义 HTML 内容，即允许 HTML</span><br><span class="line">    ## OR</span><br><span class="line">html: false # 转义 HTML，&lt; &gt; 尖括号会被转义成 &amp;lt; &amp;gt;等</span><br></pre></td></tr></table></figure>
+<p><code>plugins:</code>中的最后一项<code>- markdown-it-emoji</code>是手动添加的，官方 Github Wiki 中给出的配置不包含这一项，其他配置参照的 Github Wiki 中的默认配置，hexo-renderer-markdown-it 提供的其他新特性还没有一一尝试，暂时只想用它的 emoji 功能。✌️</p>
+<h5 id="使用方法"><a class="header-anchor" href="#使用方法">¶</a>使用方法</h5>
+<ol>
+<li>在<a href="https://emoji.codes/" target="_blank" rel="noopener">Emoji</a>中找到你想要的表情，然后点击复制粘贴。</li>
+<li>常用的emoji可以记下它的编码，直接输入，例如直接输入笑脸对应的 emoji 编码 😄 就可以得到 😄 。</li>
+</ol>
 
           
         
